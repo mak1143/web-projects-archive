@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="favicon" href="/build/favicon/favicon.png ">
+    <link rel="stylesheet" href="/styles/sign in.css">
+    <title>sign up</title>
+</head>
+<body class="sign_up_wrapper">
+    <div class="sign_up_content">
+
+        <h3 class="header-logo">register with flickr for free</h3>
+        <form action="">
+            <label class="signup_label" for="sign_up_firstname">
+              <input type="text" class="block" name="firstname" required placeholder="User name" maxlength="25">
+            </label>
+            <!-- <label class="signup_label" for="sign_up_optionalname">
+             <input type="text" name="optionalname" class="block" placeholder="Last name ( optional )" maxlength="50">
+            </label> -->
+            <label class="signup_label" for="sign_up_password">
+               <input type="password" class="block" name="password" required placeholder="strong password " maxlength="10">
+            </label>
+            <p class="shown">Password must be at  least 8 characters. </p>
+            <label class="signup_label" for="sign_up_email">
+                <input type="email" class="block" required placeholder="Email" maxlength="30">
+            </label>
+
+            <!-- trip tip from presumption that invalid and valid border-color only work for email text and password -->
+          
+             <input type="submit" value="Sign in" name="submit" class="block not signin_background"> 
+             <p class="text_white ">sign in using magic link</p>
+            <div class="or">or</div>
+            <button class="sso block not" type="button" >Login with phone number</button>
+            <p class="Privacy_Policy">
+                You acknowledge that you read and agree to our <span class="underline">Terms of Service</span> and our <span class="underline"> Privacy Policy</span>
+            </p>
+         </form>
+    </div>
+     
+</body>
+</html>

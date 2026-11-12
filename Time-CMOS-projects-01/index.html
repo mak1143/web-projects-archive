@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+@font-face {
+  font-family:clocks ;
+  src: url("./Roboto/static/Roboto-Bold.ttf") format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+}
+*::before, *::after ,*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* outline: 3px solid red; */
+
+}
+
+
+body{
+    font-family:clocks ;
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+}
+
+
+.clock {
+  width: 300px;
+  height: 300px;
+  background-color: lightgray;
+  border-radius: 50%;
+  outline: 5px solid darkgrey;
+  box-shadow: 1px 1px 4px rgba(0,0,0,.7);
+  position: relative;
+}
+
+
+
+.numbers div {
+  position: absolute;
+  font-size: 27px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0,0,0,.7);
+}
+
+.twelve {
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.one {
+  top: 30px;
+  right: 20%;
+  transform: translateX(-50%);
+}
+
+
+.two {
+  top: 75px;
+  right: 8%;
+  transform: translateX(-50%);
+}
+
+.three {
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.four {
+  bottom: 75px;
+  right: 10%;
+  transform: translateX(-50%);
+}
+
+.five {
+  bottom: 25px;
+  right: 25%;
+  transform: translateX(-50%);
+}
+
+.six {
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.seven {
+  bottom: 30px;
+  left: 25%;
+  transform: translateX(-50%);
+}
+
+.eight {
+  bottom: 80px;
+  left: 10%;
+  transform: translateX(-50%);
+}
+
+.nine {
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.ten {
+  left: 20px;
+  top: 30%;
+  transform: translateY(-50%);
+}
+
+.eleven {
+  left: 65px;
+  top: 15%;
+  transform: translateY(-50%);
+}
+
+.arrows {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrows::before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  background-color: rgb(36, 40, 36);
+  border-radius: 50%;
+  box-shadow: 1px 1px 2px rgba(0,0,0,.7);
+  z-index: 4;
+}
+
+.arrows div {
+  width: 7px;
+  height: 120px;
+  background-color: white;
+  position: absolute;
+  bottom: 50%;
+  box-shadow: 1px 1px 2px rgba(0,0,0,.7);
+  border-radius: 50% 50% 0 0;
+  transform-origin: bottom center;
+  z-index: 3;
+}
+
+.arrows .hour {
+  height: 80px;
+  transform: rotate(30deg);
+}
+
+.arrows .second {
+  background-color: rgb(218, 113, 32);
+  transform: rotate(250deg);
+ 
+}
+
+
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="numbers">
+            <div class="twelve">12</div>
+            <div class="one">1</div>
+            <div class="two">2</div>
+            <div class="three">3</div>
+            <div class="four">4</div>
+            <div class="five">5</div>
+            <div class="six">6</div>
+            <div class="seven">7</div>
+            <div class="eight">8</div>
+            <div class="nine">9</div>
+            <div class="ten">10</div>
+            <div class="eleven">11</div>
+          </div>
+          <div class="arrows">
+            <div class="hour"></div>
+            <div class="minute"></div>
+            <div class="second"></div>
+          </div>
+    </div>
+    <script>
+        const $hourEl = document.querySelector('.arrows .hour');
+        const $minuteEl = document.querySelector('.arrows .minute');
+        const $secondEl = document.querySelector('.arrows .second');
+       
+        
+
+        // set dateLocally
+        const $setDate = () =>{
+            const $now = new Date();
+            
+            const $getSecond = $now.getSeconds();
+            const $getMinute = $now.getMinutes();
+            const $getHour = $now.getHours();
+
+
+            // 
+            const $secondDegree = ($getSecond / 60) * 360;
+            const $minuteDegree = ($getMinute / 60) * 360;
+            const $hourDegree = ($getHour / 12) * 360;
+            
+
+
+            // get the arrow  movement
+            $secondEl.style.transform = `rotate(${$secondDegree}deg)`;
+            $minuteEl.style.transform = `rotate(${$minuteDegree}deg)`;
+            $hourEl.style.transform = `rotate(${$hourDegree}deg)`;           
+        }
+    setInterval($setDate, 1000);
+    </script>
+</body>
+</html>

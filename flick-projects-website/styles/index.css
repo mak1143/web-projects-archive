@@ -1,0 +1,311 @@
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* outline: 1px solid red; */
+}
+/* set up code and root variables */
+htm{
+    font-size: 16px;
+    background-color: var(--fallback-clr);
+}
+
+:root{
+    /* border setup code below here */
+    --border: 0.0625rem;
+     /* border setup code above here */
+
+    /* colors setup code here */
+    --fallback-clr: #eee;
+    --copy-right-clr: hsla(240, 95%, 63%, 0.5);
+    --primary-text-clr-black: #000;
+    --primary-text-clr-white: #fff;
+    --primary-text-clr-gray: #555;
+    --primary-text-btn-clr: rgba(104, 48, 67, 0.589);
+    --nav-text-clr:rgb(0, 183, 255);
+    --nav-bg-clr: #58555533;
+    --sign-up-clr: hsla(350, 39%, 60%, 0.932);
+    /* colors setup code above here */
+
+    /* padding, font-size and other setup code here */
+    --padding: 0.875rem;
+    --ft-size:1.0625rem;
+    --ft-size-id: 10px;
+    --ft-w: 600;
+    
+   
+    
+    
+}
+body{
+    min-height: 100vh;
+}
+.navigation_wrapper{
+    background-color: var(--fallback-clr);   
+    border-bottom: 2px solid var(--nav-bg-clr);
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem;
+    position: sticky;
+   
+}
+
+.navigation_wrapper ul li{
+    display: inline-block;
+    list-style:none;
+}
+
+
+.logo_name {
+    display: flex;
+    cursor: pointer;
+    color: var(--nav-text-clr);
+    font-weight: 900;
+}
+
+
+.logo_name h1::after{
+    content: "r";
+    position: relative;
+    left: -5px;
+}
+
+
+span.logo_sup{
+    color: hsla(300, 35%, 33%, 0.966)!important;
+}
+
+
+.navigation_wrapper a{
+    color: var(--nav-text-clr);
+    text-align: center;
+    text-decoration: none;
+    padding: 0 var(--padding) 0 var(--padding);
+    font-size: var(--ft-size);
+    font-family: gabriola;
+    font-weight: 800; 
+}
+
+.navigation_wrapper ul li::first-letter{
+    text-transform: capitalize; 
+}
+
+.navigation_wrapper a:hover,.navigation_wrapper a:focus{
+   text-decoration: 1px solid underline var(--nav-text-clr);
+    color: rgba(34, 62, 73, 0.829) ;
+    border-radius: var(--border);
+    transition: all;
+    transition-duration: 0.4s;
+    transition-timing-function: linear;
+    transition-delay: 0s;
+}
+
+
+a.active_link{
+ text-decoration: 1px solid rgba(110, 39, 39, 0.411) underline;
+ color: var(--primary-text-clr-gray);
+}
+
+input[type="search"]{
+    font-size: inherit;
+    box-sizing: border-box;
+    outline:none;
+    border-radius: 1px;
+    padding-left: 5px;
+    border-color: var(--nav-text-clr);
+}
+
+
+
+::placeholder{
+      font-style: italic;
+      text-align: right;
+     font-size: .8rem;
+}
+
+.small_Text_float_right{
+    display: inline-block;
+}
+
+.hero_image{
+    filter: drop-shadow(1px 1px 4px var(--nav-text-clr));
+    background-repeat: no-repeat;
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+    /* position: relative; */
+
+}
+
+.hero_text{
+    position: absolute;
+    top: 50%;
+    left: 85%;
+    transform: translate(-50%,-50%);
+    color: var(--primary-text-clr-white);
+}
+
+
+h2{
+    text-align: center;
+    text-shadow: -1px -1px 0px var(--primary-text-clr-black),1px 1px 0px solid var(--primary-text-clr-black)  ;
+    font-size: 1.7rem;
+    font-weight: 900;
+    
+    & .wrap_info{
+        display: block;
+    }
+ 
+
+    &::first-letter{
+        text-transform: capitalize;
+    }
+}
+
+.btn_hero_text{
+    font-size: unset;
+    padding: 5px 5px;
+    width: 200px;
+    height: 60px;
+    text-align: center;
+    text-shadow:  1px 1px 0px var(--sign-up-clr);
+    border-radius: 10px;
+    background-color: var(--fallback-clr);
+    color: var(--sign-up-clr);
+    box-shadow:  4px 4px 5px #0000005b;
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.795);
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+ a#id{
+    font-size: 10px;
+    text-decoration: none;
+    color: rgb(122, 122, 185);
+    
+}
+
+a#id:hover,:focus{
+    color: rgba(122, 122, 185, 0.623) ;
+    text-decoration: underline;
+}
+
+
+.bg_text{
+    /* a fallback color black */
+    background-color: #000;
+    background-color: rgb(0,0,0, 0.4);
+    color: #fff;
+    font-weight: bold;
+    border: 10px double #f1f1f1;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+    width: auto;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    text-shadow: 1px 1px 1px bisque;
+}
+
+.bg_text:hover,.bg_text:focus{
+    box-shadow: inset 1px 1px 50px ;
+    transition-duration: 1s;
+    transition-timing-function: ease-in;
+    border-color: var(--nav-text-clr);
+    border-radius: 10px;
+
+}
+
+
+.copy_right{
+    float: right;
+
+    &:first-letter{
+        --copyright-clr-symbol: dimgray;
+     color: var(--copyright-clr-symbol);    
+    }
+}
+
+.grid_wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-rows: 1fr 1fr 1fr ; */
+    gap: 1rem;
+   
+
+    & h3,h4,h5::first-letter{
+        text-transform: capitalize;
+    }
+}
+
+.grid_row_two{
+    display: grid;
+    grid-column:  2/4;
+}
+
+.grid_child{
+    border: 1px solid rgba(68, 68, 68, 0);
+    border-radius: 5px;
+    box-shadow: 0px 1px 5px #3b3a3a5b;
+    padding: 5px;
+}
+.signin_heading{
+    border: 1px solid #00000048 ;
+    box-shadow: 1px 1px 1px  #00000048 ;
+    border-radius: 10px;
+    padding: 10px;
+    width: 50%;
+    color: var(--sign-up-clr);
+    background-color: var(--fallback-clr);
+    position: relative;
+}
+
+.signin_heading::after{
+    content: " free!";
+    position: absolute;
+    top: -10px;
+    padding: 2px;
+    border: 2px dotted #000;
+    border-radius: 50%;
+    text-align: center;
+    color: var(--primary-text-clr-black);
+    transform: skew(0deg,-30deg);
+    background-color: yellow;
+    font-style: italic;
+}
+
+
+a#learn_more{
+    color: var(--nav-text-clr);
+    text-decoration: none;
+    display: inline-block;
+    width: 60%;
+    text-align: center;
+    /* better that i am willing stupid cause this is not even working below here */
+    text-transform: lowercase!important;
+}
+
+a#learn_more:hover{
+    color: rgba(19, 143, 192, 0.856);
+  text-decoration:rgba(38, 161, 209, 0.863) underline;
+}
+
+
+.ampersand{
+    color: var(--primary-text-clr-gray);
+}
+
+footer{
+    margin-top: 5px;
+    height: 50vh;
+    background: linear-gradient(24deg,black,rgba(231, 226, 226, 0.589));
+}
+
+

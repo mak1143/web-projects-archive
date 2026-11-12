@@ -1,0 +1,626 @@
+*::before, *::after,*{
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ scroll-behavior:smooth;
+ /* outline: 1px solid red; */
+}
+
+/* set up code here */
+:root{
+    --bg-clr: #555;
+    --bg-nav: rgba(195, 199, 201, 0.623);
+    --primary-clr-white: #fff;
+    --primary-clr-black: #1b1a1a;
+    --primary-clr-aqua: aqua;
+    --primary-clr-red: red;
+    --max-width: 37.5rem;
+    --img-width-height: 12.5rem;
+    --mr: 7.5rem;
+    --one-rems: .0625rem;
+    --two-rems: .125rem;
+    --five-rems: .3125rem;
+    --ten-rems: .625rem;
+    --twelve-rems:0.75rem;
+    --fifteen-rems: .9375rem;
+    --eighteen-rems: 18.75rem;
+}
+
+
+
+#grid_container{
+background: var(--primary-clr-black);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    color: var(--primary-clr-white);
+}
+
+.nav__float_min_screen{
+    background-color: var(--bg-nav); 
+}
+
+
+footer{
+    min-height: 10vh;
+    display: block;
+   
+  
+   
+
+}
+
+address{
+   text-align: center;
+}
+
+.logo{
+    font-family: Broadway;
+}
+
+/* large screens */
+@media(min-width: 604px){ 
+   
+
+.nav__float_min_screen{
+      width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .75rem;
+    
+    /* float: right; */
+
+    & ul li{
+        list-style: none;
+        display: inline-block;
+       
+    }
+
+    & ul li a:not(.message){
+        color: var(--primary-clr-black);
+        text-decoration: none;
+        padding: 1rem;
+
+        &:hover:not(.active) {
+            background-color: var(--bg-clr) ;
+            color: var(--primary-clr-white);
+        }
+
+       
+    }
+    .active{
+        background-color: var(--bg-clr);
+        color: #fff;
+    }  
+}
+
+.message{
+    background-color: var(--primary-clr-red);
+    border-radius: .625rem;
+    color: var(--primary-clr-white);
+    text-decoration: none;
+    padding: var(--five-rems);
+}
+
+.hero_image{
+    display: none;
+}
+
+header{
+    width: 100%;
+    height: 100vh;
+    background-image: url(/img/img1.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.align_items_center{
+    background-color: var(--bg-clr);
+    border: .125rem solid ;
+    border-radius: var(--five-rems);
+    text-align: center;
+    line-height: 2;
+    padding: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button{
+    display: block;
+    margin: 0 auto;
+    background-color: var(--primary-clr-black);
+    cursor: pointer;
+    padding: 1rem;
+    font-size: inherit;
+    border: 0;
+    outline: none;
+    color: var(--primary-clr-white);
+    border-radius: .125rem;
+ 
+
+    &:hover{
+     background-color: var(--bg-clr);
+     color: var(--primary-clr-black);
+     outline: 1px solid var(--primary-clr-aqua);
+    }
+   
+ }
+
+img{
+    width: var(--img-width-height);
+    height: var(--img-width-height);
+    
+}
+img.rounded_img_left{
+    border-radius: 50%;
+    margin-bottom: -5rem;
+}
+
+ .image_wrapper{
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: var(--ten-rems);
+    
+ }
+
+ .grid_images{
+    border: 2px solid rgb(133, 129, 129);
+ }
+
+ main{
+    margin-left: var(--ten-rems);
+    margin-right: var(--ten-rems);
+ }
+
+ .small_horizontal_hidden{
+    opacity: 0.3;
+    margin-left: var(--ten-rems);
+    margin-right: var(--ten-rems);
+ }
+
+
+h2{
+    text-transform: capitalize;
+    margin-top: 1rem;
+    margin-bottom:  2rem;
+}
+
+ p#about_text{
+    color:#ffebeb;
+}
+.dark-grey{
+    font-weight: 500;
+    font-size: 1.0625rem;
+    font-family: inherit;
+    background-color: #ffffffbd;
+    color: var(--primary-clr-black);
+    text-align: center;
+    border: var(--one-rems) solid var(--primary-clr-black);
+    cursor: pointer;
+}
+
+.mono_space{
+    margin: var(--twelve-rems) 0;
+    vertical-align: middle;
+    font-family: monospace;
+    letter-spacing: var(--two-rems);
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+.line_space{
+    line-height: 2;
+    font-size: inherit;
+    font-family:fantasy;
+    font-weight: 200;
+    margin-bottom: 2rem;
+}
+
+nav{
+    text-transform: capitalize;
+}
+form{
+    line-height: 2;
+    
+
+    & input{
+        width: 50%;
+        line-height: 3;
+        margin-top: var(--fifteen-rems);
+        margin-bottom: var(--fifteen-rems);
+        outline: none;
+        padding-left: var(--twelve-rems);
+        font-size: inherit;
+
+/* here is the correct way in writing dry code if they serving the same purpose the 
+        &:invalid,:valid{
+            background-size: 30px;
+            background-position: calc(100% - 10px);
+            background-repeat: no-repeat;b
+        } */
+
+        &:invalid:not(:placeholder-shown){
+            border-color: red;
+            background-image: url(/img/chek.png);
+            background-size: 30px;
+            background-position: calc(100% - 10px);
+            background-repeat: no-repeat;
+        }
+
+        /* note that there is duplicate code so if you found out then debug it for me am really tired */
+
+        &:valid:not(:placeholder-shown){
+            border-width: var(--two-rems);
+            border-color: green;
+            background-image: url(/img/checkbox3.png);
+            background-size: 30px;
+            background-position: calc(100% - 10px);
+            background-repeat: no-repeat;
+        }
+    }
+
+
+
+
+}
+
+
+.copy_right{
+    text-align: center;
+    color: var(--primary-clr-white);
+}
+.light-grey{
+    color: #918f8f;
+  
+  
+
+}
+.text_wrapper{
+    display: inline-block;
+    height: var(--img-width-height);
+    width: var(--eighteen-rems);
+    margin-left: 5rem;
+}
+
+.text-black{
+    color: var(--primary-clr-white);
+}
+hr{
+    margin-bottom: 4rem;
+}
+
+/* this is the first buttom with no tooltip when hover */
+.no_show{
+    display: none;
+}
+
+.tooltip{
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    
+}
+
+.tooltip .tooltip_text{
+    visibility: hidden;
+    width: 120px;
+    background-color: var(--bg-clr);
+    color: var(--primary-clr-white);
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: -15px;
+    left: 120%;
+    margin-right: 60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltip_text::after{
+    content: "";
+    position: absolute;
+    top:  20px;
+    left: -10px;
+    border-width: 5px;
+    border-style: solid;
+    transform: translateX(-0%);
+    border-color:transparent var(--bg-clr) transparent transparent;
+    
+}
+
+.tooltip:hover .tooltip_text{
+    visibility: visible;
+    opacity: 1;
+} 
+p{
+    color: #fff;
+}
+
+}
+
+
+/* small screens */
+@media( max-width: 604px){
+    main{
+        margin-right: var(--fifteen-rems);
+        margin-left: var(--fifteen-rems);
+    }
+.small_horizontal_hidden{
+    display: none;
+}
+
+    h1.logo{
+        display: none;
+    }
+    .nav__float_min_screen{
+        text-align: center;
+
+        & ul li:not(:last-child) {
+            list-style: none;
+            border-bottom: var(--one-rems) solid;
+            padding: var(--five-rems);
+           
+        }
+
+        & ul li a{
+            display: block;
+            /* width: 100%; */
+            color: var(--primary-clr-black);
+            text-shadow: none;
+            text-decoration: none;
+            padding: var(--five-rems);
+            text-transform: capitalize;
+           border-radius: var(--five-rems);
+
+        }
+        
+        & a:hover{
+            background-color: var(--bg-clr);
+            color: var(--primary-clr-white);
+           
+        }
+
+       
+        
+    }
+
+  
+
+
+    h1.small_screen_logo{
+        font-size: 3rem;
+    }
+
+
+    img.hero_image{
+        border: 0;
+        width: var(--eighteen-rems);
+        height: var(--eighteen-rems);
+        object-fit: cover;
+        object-position: center;
+        border-radius: var(--ten-rems);
+    }
+
+p.small_text_gray{
+    color: var(--bg-clr);
+}
+
+    header{
+     
+        text-align: center;
+        line-height: 2;
+    }
+  
+
+    button{
+       display: block;
+       margin: 0 auto;
+       background-color: rgb(0, 0, 0);
+       cursor: pointer;
+       padding: 1rem;
+       font-size: inherit;
+       border: 0;
+       outline: none;
+       color: #fff;
+       border-radius: var(--two-rems);
+       margin-bottom: 12em;
+
+       &:hover{
+        background-color: var(--bg-clr);
+        color: var(--primary-clr-black);
+        outline: 1px solid var(--primary-clr-aqua);
+       }
+      
+    }
+
+    .image_wrapper{
+        display: grid;
+        gap: 1.25rem;
+        grid-template-columns: 1fr;
+    }
+
+    .grid_images{
+        width: 100%;
+        height: var(--eighteen-rems);
+        overflow: hidden;
+        object-fit: cover;
+        object-position: center;
+        max-width: 100%;
+        border: var(--two-rems) solid rgb(133, 129, 129);
+        border-radius: var(--ten-rems);
+    }
+
+    hr{
+        opacity: .4;
+    }
+
+    h2{
+        margin-top: 1rem;
+        margin-bottom:  2em;
+        text-transform: capitalize;
+    }
+
+
+
+    #about{
+        margin-top: 12rem;
+    }
+
+    .dark-grey{
+        font-weight: 500;
+        font-size: 17px;
+        font-family: inherit;
+        background-color: #ffffffbd;
+        color: #000;
+        text-align: center;
+        border: 1px solid black;
+        cursor: pointer;
+    }
+
+    .mono_space{
+        margin: --twelve-rems 0;
+        vertical-align: middle;
+        font-family: monospace;
+        letter-spacing: var(--two-rems);
+        font-weight: 800;
+        font-size: 1rem;
+    }
+    
+    .line_space{
+        line-height: 2;
+        font-size: inherit;
+        font-family:fantasy;
+        font-weight: 200;
+        margin-bottom: 2rem;
+    }
+
+    #contact{
+        line-height: 3;
+        color: var(--bg-clr);
+        text-transform: capitalize;
+    }
+
+
+    .rounded_img_left{
+        --hundred-rems: 6.25rem;
+        width: var(--hundred-rems);
+        height: var(--hundred-rems);
+        border-radius: 50%;
+        object-fit: cover;
+        display: inline-block;
+       
+        
+    }
+/* 
+    p{
+       color:var(--bg-clr) ;
+    } */
+
+
+    form{
+        line-height: 2;
+        
+
+        & input{
+            width: 100%;
+            line-height: 3;
+            margin-top: var(--fifteen-rems);
+            margin-bottom: var(--fifteen-rems);
+            outline: none;
+            padding-left: var(--twelve-rems);
+            font-size: inherit;
+
+/* here is the correct way in writing dry code if they serving the same purpose the 
+            &:invalid,:valid{
+                background-size: 30px;
+                background-position: calc(100% - 10px);
+                background-repeat: no-repeat;b
+            } */
+
+            &:invalid:not(:placeholder-shown){
+                border-width: 2px;
+                border-color: red;
+                background-image: url(/img/chek.png);
+                background-size: 30px;
+                background-position: calc(100% - 10px);
+                background-repeat: no-repeat;
+            }
+
+            /* note that there is duplicate code so if you found out then debug it for me am really tired */
+
+            &:valid:not(:placeholder-shown){
+                border-width: 2px;
+                border-color: green;
+                background-image: url(/img/checkbox3.png);
+                background-size: 30px;
+                background-position: calc(100% - 10px);
+                background-repeat: no-repeat;
+            }
+        }
+
+       
+
+
+
+    }
+
+
+    .copy_right{
+        text-align: center;
+        color: var(--primary-clr-white);
+    }
+
+    /* tooltip code here */
+    
+.tooltip{
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    
+}
+
+.tooltip .tooltip_text{
+    visibility: hidden;
+    width: 120px;
+    background-color: var(--bg-clr);
+    color: var(--primary-clr-white);
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: -95px;
+    left: 10px;
+    margin-right: 60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltip_text::after{
+    content: "";
+    position: absolute;
+    top:  -10px;
+    left: 50%;
+    border-width: 5px;
+    border-style: solid;
+    transform: translateX(-50%);
+    border-color:  transparent  transparent   var(--bg-clr) transparent;
+    
+}
+
+.tooltip:hover .tooltip_text{
+    visibility: visible;
+    opacity: 1;
+} 
+
+   
+}

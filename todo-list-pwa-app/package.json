@@ -1,0 +1,19 @@
+{
+  "name": "todo-list-pwa",
+  "version": "1.0.0",
+  "description": "A simple to-do list PWA",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "http-server public -p 5500 -c-1"
+  },
+  "keywords": [
+    "pwa",
+    "todo",
+    "javascript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.12.3"
+  }
+}

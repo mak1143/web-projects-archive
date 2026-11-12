@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>body mass index (BMI)</title>
+</head>
+<style>
+    *,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+}
+
+
+:root{
+    --primary-clr-font: hsl(0, 0%, 100% , 1);
+    --primary-black: hsl(200, 7%, 8% ,1 );
+    --primary-back-void: hsl(252, 11%, 9%);
+    --accent-dusty-grey:hsl(0, 0%, 53%);
+    --clr-primary: hsl(210, 11%, 15%);
+    --clr-operator: hsl(24, 100%, 50%);
+    --clr-number: hsl(210, 10%, 23%) ;
+    --clr-top-operator: hsla(0, 0%, 100%, 0.833) ;
+
+    /* border */
+    --border: 1px solid hsl(0, 0%, 80%);
+    --box-shodow:  -168px 560px 164px 0px rgba(0, 0, 0, 0.01), -107px 358px 150px 0px rgba(0, 0, 0, 0.08), -60px 202px 126px 0px rgba(0, 0, 0, 0.27), -27px 90px 94px 0px rgba(0, 0, 0, 0.45), -7px 22px 51px 0px rgba(0, 0, 0, 0.52);
+   
+    
+}
+
+  
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsla(0, 5%, 92%, 0.382);
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    min-height: 100dvh;
+}
+
+.container{
+    max-width:  400px;
+    height: 500px;
+    color: var(--primary-clr-font);
+    background-color: var(--clr-primary);
+    border-radius: 32px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border:var(--border);
+    box-shadow: var(--box-shodow);
+     box-sizing: border-box;
+}
+
+.heading{
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    font-size: 30px;
+}
+label{
+    margin-left: 208px;
+    display: flex;
+}
+
+.input{
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 18px;
+    background: var(--clr-top-operator);
+    border-color: rgba(255,255,255, .5);
+    margin: 10px 0 10px 0;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    outline: var(--border);
+}
+
+.btn{
+    margin: 10px auto 10px auto;
+    width: 60%;
+    background-color: var(--clr-operator);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.25rem;
+    box-shadow: 0 0 4px rgba(0,0,0,.3);
+    cursor: pointer;
+}
+
+.btn:hover{
+    box-shadow: 0 0 8px rgba(0,0,0,.3);
+    transition: all 300ms ease;
+}
+
+.info-text{
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+</style>
+<body>
+    <div class="container">
+        <h1 class="heading">(BMI) Calculator</h1>
+        <label for="height">
+            Your Height (cm):
+             </label>
+            <input type="number" class="input" id="height" value="180" placeholder="Enter your height in cm">
+       
+        <label for="weight">
+            Your Weight (kg): 
+         </label>
+            <input type="number" class="input" id="weight" value="80" placeholder="Enter your weight in kg">
+      
+
+        <button class="btn" id="btn" >Calculate BMI</button>
+        <input  type="text" class="input" readonly id="bmi-result" name="text-input">
+        <h4 class="info-text">Weight Condition: <span id="weight-condition"></span></h4>
+    </div>
+    <script>
+        const $btnEl = document.querySelector('#btn')
+        const $bmiResult = document.querySelector('#bmi-result')
+        const $weightConditionEl = document.querySelector('#weight-condition')
+
+       const calculateBmi = () =>{
+        let $heightValue = document.querySelector('#height').value / 100;
+        const $weightValue = document.querySelector('#weight').value;
+        const $bmiValue = $weightValue / ($heightValue *= $heightValue);
+        $bmiResult.value = $bmiValue;
+        console.log($bmiValue);
+        
+        if($bmiValue < 18.5){
+            $weightConditionEl.textContent = "under weight";
+        }else if($bmiValue >= 18.5 && $bmiValue <= 24.9){
+              $weightConditionEl.textContent = "normal weight";
+        }else if($bmiValue >= 25 && $bmiValue <= 29.9){
+              $weightConditionEl.textContent = "Overweight";
+        }else if($bmiValue >= 30){
+              $weightConditionEl.textContent = "obesity";
+        }
+}
+
+   
+    $btnEl.addEventListener("click", calculateBmi);
+
+
+    </script>
+</body>
+</html>

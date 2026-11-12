@@ -1,0 +1,415 @@
+  
+ @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+ /*|| css reset code here || */
+ *,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* outline: 1px solid red; */
+    scroll-behavior: smooth;
+ }
+
+ /* || var customs reset code here || */
+ :root {
+        --clr-primary2: hsl(0, 0%, 100%);
+        --clr-primary: hsl(220, 50%, 90%);
+        --clr-secondary1:hsl(220, 50%, 10%);;
+        --clr-secondary2: hsl(221, 52%, 29%);
+        --clr-tertiary: hsl(280, 80%, 90%);
+        --clr-accent: hsl(160, 80%, 20%);
+        --clr-custom1: hsl(197, 69%, 78%);
+        --clr-custom2: hsl(51, 57%, 66%);
+        --clr-custom3: hsl(60, 56%, 90%);
+        --clr-links: #0abefb;
+        --clr-custom4: #1e1e1e;
+        --ff: "Open Sans", sans-serif;
+        --h1: bold 6.25rem var(--ff);
+        --h2: bold 36px/1em var(--ff);
+        --h3: bold 24px/1em var(--ff);
+        --links: bold 18px/1em var(--ff);
+        --p2: 30px/1em var(--ff);
+        --p: 18px/1em var(--ff);
+        --transition1: 0.3s ease-in-out;
+        --transition2: all cubic-bezier(.57,.89,.86,.15);
+        --transition3: all cubic-bezier(.25,.94,.86,.15);
+        --transition4: all cubic-bezier(.45,.43,.86,.15);
+        --transition5: all cubic-bezier(.61,.95,.86,.15);
+        --transition6: all cubic-bezier(.45,.23,.27,.8);
+        --transition7: all cubic-bezier(.22,.7,.76,.53);
+        --primary-pixels100: 6.25rem;  /*100px*/
+        --primary-pixels1:  0.0625rem;  /*1px*/ 
+        --primary-pixels25:  1.5625rem ; /*25px*/
+        --primary-pixels500: 31.25rem; /*500px*/
+        --primary-pixels200: 12.5rem; /*200px*/
+        --primary-pixels300: 18.75rem; /*300px */
+        --primary-pixels10: 0.625rem; /*10px*/
+        --primary-pixels5: 0.3125rem; /*5px*/
+        --primary-pixels80: 5rem; /*80px*/
+        --primary-pixels1080: 67.5rem; /*1080px*/
+        --primary-pixels20: 1.25rem; /* 20px*/
+        --primary-pixels50: 3.125rem; /*50px*/
+        --primary-pixels60: 3.75rem; /*60px*/
+        --primary-pixels3: 0.1875rem; /* 3px*/
+        --shadow: #00000030 0px 0px 10px 0px;
+         /* max-width: var(--primary-pixels1080); */
+ }
+ body{
+    background-color: aliceblue;
+ }
+
+ .header-about{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    height: var(--primary-pixels80); 
+    background-color: var(--clr-secondary1);
+    border-bottom: 2px solid var(--clr-links);
+    
+}
+
+.logo-about{
+    width: 150px;
+    height: 50px;
+    object-fit: cover;
+    object-position: center;
+   
+}
+
+.header-logo-about{
+    position: relative;
+}
+
+.chrismax-about-logo{
+    position: absolute;
+    top: -10px;
+    left: 120px;
+    transform: rotate(20deg);
+}
+.chrismax-about-logo img{
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+}
+
+
+
+a.nav-links-about{
+    text-decoration: none;
+    color: var(--clr-primary);
+    font: var(--links);
+    text-transform: capitalize;
+}
+
+
+
+/* active link for home page */
+
+
+a.nav-links-about{
+    text-decoration: none;
+    color: var(--clr-primary);
+    font: var(--links);
+    text-transform: capitalize;
+    margin-right: 1rem ;
+}
+
+
+
+/* active link for home page */
+a.homepage{
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    color:  var(--clr-links);
+}
+
+
+.nav-links-about:hover:not(.homepage){
+    color: var(--clr-custom3);
+    transition: all var(--transition1);
+    text-decoration: 2px underline;
+    text-underline-offset: 3px;
+}
+
+header .nav-links-about{
+    font-weight: normal;
+   
+}
+
+
+.nav-menu-about{
+    display: flex;
+    gap: var(--primary-pixels60);
+}
+
+.nav-menu-about li{
+    list-style: none;
+}
+
+.hamburger-about{
+    display: none;
+    cursor: pointer;
+}
+
+.bar-about{
+    display: block;
+    width: var(--primary-pixels25);
+    height: var(--primary-pixels3);
+    margin: var(--primary-pixels5) auto;
+    transition: var(--transition1);
+    background-color: var(--clr-primary2);
+    border-radius: var(--primary-pixels10); 
+    margin-right: .5rem;
+}
+
+
+/* social icons here */
+.contact-about{
+margin: 0px 0px -4px;
+display: inline-block;
+}
+
+img.contact-about {
+width: var(--primary-pixels20);
+height: var(--primary-pixels20);
+object-fit: cover;
+object-position: 100%;
+}
+
+/* media queries code below here */
+
+@media (max-width: 800px){
+    .header-about{
+        border-bottom: none;
+    }
+    .hamburger-about{
+        display: block;
+    }
+  
+
+    .hamburger-about.active .bar-about:nth-child(2){
+        opacity: 0;
+    }
+
+    
+    .hamburger-about.active .bar-about:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger-about.active .bar-about:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu-about{
+        --primary-pixels40: 2.5rem; /*40px*/
+        padding-top: var(--primary-pixels40);
+        background-color: var(--clr-secondary1);
+        position: fixed ;
+        right: -100%;
+        top: var(--primary-pixels80);
+        align-items: flex-end;
+        flex-direction: column;
+        height: 100%;
+        transition: var(--transition1);
+        margin: 0px;
+        z-index: 1;
+    }
+
+    .nav-item-about a{
+        padding: 0px 2vw;
+        
+    }
+    
+
+    .nav-menu-about.active {
+        right: 0;
+        transition: var(--transition1);
+    }
+
+
+}
+
+h2,.mission{
+    font-size: 1.3rem ;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-weight: 400;
+    font-style: italic;
+    font-variant: small-caps;
+    color: #193a46;
+    padding: 1rem;
+    text-align: center;
+    
+}
+
+.fraud-tips> h3{
+    text-align: center;
+    text-decoration: 2px underline black;
+    color: red;
+    text-underline-offset: 5px;
+}
+.about-head-title{
+    position: relative;
+}
+
+
+.promo-chrismax{
+    position: absolute;
+    top: -25px;
+    left: 20px;
+    transform: rotate(-15deg);
+    
+}
+
+
+div.about-image{
+    background-image: url(/images/jojo.jpg);
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+  
+    
+   
+}
+
+/* main section code here */
+
+div>strong{
+    color: rgb(165, 27, 27);
+}
+.fraud-cards-wrapper{
+    display: flex;
+    place-content: center;
+    padding: 1rem;
+    gap: 20px;
+   
+}
+
+@media(max-width: 800px){
+    .fraud-cards-wrapper{
+        display: flex;
+         flex-direction: column;
+         flex-wrap: wrap;
+        padding: 1rem;
+        gap: 20px;
+       
+    }
+    .text-hero{
+        font-weight: 800;
+    }
+  
+    
+div.about-image{
+    min-height: 100vh;
+    object-fit: cover;
+    object-position: 50%;
+}
+}
+
+
+.fraud-cards{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    border: 1px solid;
+    border-radius: 2px;
+    width: var(--primary-pixels300);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: 0px 0px 6px;
+
+}
+
+.text-about{
+    padding: 1rem;
+    background-color: #e4e4e4;
+}
+
+.img-tips{
+   object-position: top;
+    height: 300px;
+    object-fit:cover ;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+  
+}
+
+/* media queries code above here */
+
+/* footer code here */
+
+.facebook{
+    background-color: black;
+    border-radius: 50%;
+}
+
+.efiep3_footer{
+    position: relative;
+    padding: 5vw;
+    background-color: var(--clr-links);
+    line-height: 1.4;
+}
+.efiep3_c1{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    gap: 20px;
+}
+/* footer flex wrapper code here */
+
+/* info links code  */
+
+ul li{
+    list-style: none;
+}
+.efiep3_footer_links{
+    text-decoration: none;
+    line-height: 2;
+    color: black ;
+
+    &:hover{
+        text-decoration: 1px underline;
+        color: #555555c9;
+        text-underline-offset: 2px;
+        transition: var(--transition1);
+    }
+}
+
+h5{
+    text-transform: capitalize;
+    line-height: 2;
+    font-weight: 900;
+    font-size: 1rem;
+}
+
+
+.social_icons_wrapper{
+  margin-top: 3rem;
+  text-align: center;
+   
+}
+
+.social_icons{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.social_icons_efiep3{
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    cursor: pointer;
+
+    &:hover{
+        scale: 1.2;
+        transition: var(--transition1);
+    }
+}
+
+
