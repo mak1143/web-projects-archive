@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style-contact.css">
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> -->
+  <title>Contact form</title>
+
+ 
+</head>
+<body>
+<section class="form-contact">
+    <h1>Contact Us</h1>
+   <form action="index.html" method="get" onsubmit="return validation()"> 
+    <div id="personal-info">
+      <div>
+        <label for="contact-First-name">
+          First Name <sup>*</sup></label>
+          <input type="text" id="contact-First-name" name="contact-First-name" autocomplete="off" placeholder=" @John">
+        
+      </div>
+      <div>
+        <label for="contact-last-name">
+          Last Name<sup>*</sup>
+        </label>
+        <input type="text" id="contact-last-name" name="contact-last-name"   required>
+       
+      </div>     
+    </div>
+    
+    <div id="email-addresses">
+      <label for="contact-email">
+        Email Address<sup>*</sup>
+      </label>
+      <input type="email" id="contact-email" name="contact-email"   required>
+      
+    </div>
+     
+    <div id="query-type-selction">
+      <label for="contact-query-01" > Query Type <sup>*</sup></label>
+      <div>
+          <label for="contact-query-01" >
+          <input type="radio"  name="contact-query" id="contact-query-01"   value="General-Enquiry" checked> General Enquiry
+        
+        </label>
+      </div>
+      <div>
+        <label for="contact-query-02">
+          <input type="radio"  name="contact-query" id="contact-query-02"  value="Support-Request"> Support Request</label>
+      </div>   
+    </div>
+
+    
+    <div id="textarea-input">
+     <label for="textarea">Message<sup>*</sup>
+     </label>
+     <textarea name="textarea" id="textarea" ></textarea>
+    </div>
+    <div>
+      
+      <label for="team-support">
+        <input type="checkbox" name="team-support" id="team-support">I consent to being contacted by the team
+        <sup>*</sup></label>
+      <!-- ERROR MESSAGE
+       To submit this form, please consent to being contacted -->
+    </div>
+   <div>
+      <button type="submit" id="btn">Send Message</button>
+   </div>
+   
+   </form>
+</section>
+<script src="script.js"></script>
+ 
+</body>
+</html>

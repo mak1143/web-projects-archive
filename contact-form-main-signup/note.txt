@@ -1,0 +1,57 @@
+http and forms 
+let's say type fuse.com/index.html into the browser's address bar ,the browser first looks up the adress of the server associated with fuse.com and ties to open a TCP connections to it on port 80, thats the default port for HTTP traffic. if it exist then accept the connections the browser send this 
+GET/index.html/1.1
+Host: fuse.com
+User-Agent: Your browser's name
+
+
+then the server responds, through that same connection
+HTTP/1.1 200OK
+
+this are headers
+(Content-Length: 65585 this tell us the size< which means bytes>
+Context-Type: text/html
+Last-Modified: Mon,23, 2004 12: 23: 50 GMT  -- last Modified)
+
+<!DOCTYPE html>
+...the rest of the document
+
+this the request sent by the browser
+GET/index.html/1.1
+|<- this is the method of the request , meaning is to get a specified resource.
+DELETE Is to delete a resource,
+PUT is to create or replace it , and POST is to send information to it.
+
+after the first resource GET/ index.html HTTP/1.1
+HTTP simple means the version of the HTTP protocol it is using.
+
+
+three-digit
+HTTP/1.1 200 OK 2 simply means that the request has succeded. and codes starting with 4 mean there was something wrong with the request
+404 is the most famoust HTTP status code  which means that the resource cannot be found.Codes that start with 5 mean an error happened on the server
+and the request is not to blame.
+
+When the <form> element’s method attribute is GET (or is omitted), the information in the form is added to the end of the action URL as a query string
+
+GET /example/message.html?name=Jean&message=Yes%3F HTTP/1.1
+the quesition mark indicates the end of the path part of the URL and the start of the query string. the ampersand characters & is used to separate the pairs.
+
+the message  is encoded in the URL is "Yes?"but the question mark is replace by a strange code. This one, called URL encoding, uses a percent sign followed by two hexadecimal
+(base 16) digits that encode the character code.  In this case, 3F, which is 63
+in decimal notation, is the code of a question mark character.
+(encodeURlComponet)Encodes a text string as a valid component of a Uniform Resource Identifier (URI).
+(decodeURlComponent)Gets the unencoded version of an encoded component of a Uniform Resource Identifier (URI).
+Sereach for WHEN IT'S SHOULD BE USED OR APPLICATIONS 
+GET requests should be used for requests that do not have side effects but
+simply ask for information.
+
+fetch("example/data.txt", {method: "DELETE"}).then(resp => {
+console.log(resp.status);
+// → 405
+});
+The 405 status code means “method not allowed”, an HTTP server’s way of
+saying “I can’t do that”.
+
+fetch("example/data.txt")
+.then(resp => resp.text())
+.then(text => console.log(text));
